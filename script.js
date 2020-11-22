@@ -12,7 +12,7 @@ var finalcomboPassword = ""
 //Choosing character preferences after popup confirm (lower case..upper case...)//
 var chosenChars = ""
 //Range of Password Length//
-var passwordlength = { from: 8, to: 128 }
+var passwordlength = {from: 8, to: 128}
 //Var Definitions to minimize usage of 'var'//
 var chooseSymbols
 var chooselowerCase
@@ -38,7 +38,7 @@ generateBtn.addEventListener("click", writePassword); {
         passwordlength = prompt("Please make sure you put a NUMBER that is between 8 and 128")
       } console.log(passwordlength)
 
-      //begin combo choices.. Gathered the IF Sequences from YT and combined it with my confirm pop-up //
+    //begin combo choices.. Gathered the IF Sequences from YT and combined it with my confirm pop-up //
       finalcomboPassword = ""
 
       chooseSymbols = confirm("Do you want Symbols?")
@@ -46,11 +46,17 @@ generateBtn.addEventListener("click", writePassword); {
       if (chooseSymbols === true) {
         chosenChars += specialSymbols;
       }
+      else (chooseSymbols !== true); {
+        chosenChars !== specialSymbols;
+      }
 
       chooselowerCase = confirm("Do you want Lower Case letters?")
       console.log(chooselowerCase)
       if (chooselowerCase === true) {
         chosenChars += lowerCase;
+      }
+      else(chooselowerCase !== true); {
+        chosenChars !== lowerCase;
       }
 
       chooseupperCase = confirm("Do you want Upper Case letters?")
@@ -58,11 +64,17 @@ generateBtn.addEventListener("click", writePassword); {
       if (chooseupperCase === true) {
         chosenChars += upperCase
       }
+      else (chooseupperCase !== true); {
+        chosenChars !== upperCase
+      }
 
       chooseNumber = confirm("Do you want numbers?")
       console.log(chooseNumber)
       if (chooseNumber === true) {
         chosenChars += number
+      }
+      else (chooseNumber !== true); {
+        chosenChars !== number
       }
     }
     //Random Math statement combining all to generate final product//
@@ -72,5 +84,5 @@ generateBtn.addEventListener("click", writePassword); {
       console.log(finalcomboPassword)
     }
     return finalcomboPassword
-  }
+  }  
 }
