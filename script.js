@@ -33,38 +33,39 @@ generateBtn.addEventListener("click", writePassword);{
 function generatePassword() {
   //Beging Loops until the correct amount (a number between 8-128) is added. Additional prompts to confirm Character Preference//
   passwordlength = (prompt("How many characters would you like your Password to be? Must be betweem 8 to 128 characters")); {
+    //Happened to find out the usage of 'while' by chance. I was stuck on this part for awhile because I wanted my prompts to continue even if a value wasn't correctly added. Instructor was reviewing a JS CheatSheet and as he scrolled through loops, I found 'while.'
     while (isNaN(passwordlength) || (passwordlength < 8 || passwordlength > 128)) {
       passwordlength = parseInt(prompt("Please make sure you put a NUMBER that is between 8 and 128"))
-    }
-    console.log(passwordlength)
+    } console.log(passwordlength)
+
+    //begin combo choices.. referenced this sequence from YouTube Video //
+    finalcomboPassword = ""
 
     chooseSymbols = confirm("Do you want Symbols?")
     console.log(chooseSymbols)
+    if (chooseSymbols === true) {
+      chosenChars += specialSymbols;
+    }
 
     chooselowerCase = confirm("Do you want Lower Case letters?")  
     console.log(chooselowerCase)
+    if (chooselowerCase === true) {
+      chosenChars += lowerCase;
+    }
 
     chooseupperCase = confirm("Do you want Upper Case letters?")
     console.log(chooseupperCase)
+    if (chooseupperCase === true) {
+      chosenChars += upperCase
+    }
 
     chooseNumber = confirm("Do you want numbers?")
     console.log(chooseNumber)
+    if (chooseNumber === true) {
+      chosenChars += number
   }
-//begin combo choices.. referenced this sequence from YouTube Video //
+    }
 
-  finalcomboPassword = ""
-  if (chooseSymbols === true) {
-    chosenChars += specialSymbols;
-  }
-  if (chooselowerCase === true) {
-    chosenChars += lowerCase;
-  }
-  if (chooseupperCase === true) {
-    chosenChars += upperCase
-  }
-  if (chooseNumber === true) {
-    chosenChars += number
-  }
   for (var i = 0; i < passwordlength; i++) {
     finalcomboPassword += chosenChars.charAt(Math.random() * chosenChars.length);
     //tracking method of showing random generator in progress//
