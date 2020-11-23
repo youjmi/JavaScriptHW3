@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 //Var Characters//
 var specialSymbols = "~!@#$%^&*()_+";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var upperCase = lowerCase.toUpperCase();
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var number = "123456789";
 //Gabe mentioned this at the last segment of class to find a way to combo all//
 var finalcomboPassword = ""
@@ -39,50 +39,38 @@ generateBtn.addEventListener("click", writePassword); {
       } console.log(passwordlength)
 
     //begin combo choices.. Gathered the IF Sequences from YT and combined it with my confirm pop-up //
-      finalcomboPassword = ""
+    finalcomboPassword = ""
 
-      chooseSymbols = confirm("Do you want Symbols?")
-      console.log(chooseSymbols)
-      if (chooseSymbols === true) {
-        chosenChars += specialSymbols;
-      }
-      else (chooseSymbols !== true); {
-        chosenChars !== specialSymbols;
-      }
-
-      chooselowerCase = confirm("Do you want Lower Case letters?")
-      console.log(chooselowerCase)
-      if (chooselowerCase === true) {
-        chosenChars += lowerCase;
-      }
-      else(chooselowerCase !== true); {
-        chosenChars !== lowerCase;
-      }
-
-      chooseupperCase = confirm("Do you want Upper Case letters?")
-      console.log(chooseupperCase)
-      if (chooseupperCase === true) {
-        chosenChars += upperCase
-      }
-      else (chooseupperCase !== true); {
-        chosenChars !== upperCase
-      }
-
-      chooseNumber = confirm("Do you want numbers?")
-      console.log(chooseNumber)
-      if (chooseNumber === true) {
-        chosenChars += number
-      }
-      else (chooseNumber !== true); {
-        chosenChars !== number
-      }
+    chooseSymbols = confirm("Do you want Symbols?")
+    console.log(chooseSymbols)
+    if (chooseSymbols === true) {
+      chosenChars += specialSymbols;
     }
-    //Random Math statement combining all to generate final product//
-    for (var i = 0; i < passwordlength; i++) {
-      finalcomboPassword += chosenChars.charAt(Math.random() * chosenChars.length);
-      //tracking method of showing random generator in progress//
-      console.log(finalcomboPassword)
+
+    chooselowerCase = confirm("Do you want Lower Case letters?")
+    console.log(chooselowerCase)
+    else if (chooselowerCase === true) {
+      chosenChars += lowerCase;
     }
-    return finalcomboPassword
-  }  
+
+    chooseupperCase = confirm("Do you want Upper Case letters?")
+    console.log(chooseupperCase)
+    else if (chooseupperCase === true) {
+      chosenChars += upperCase
+    }
+
+    chooseNumber = confirm("Do you want numbers?")
+    console.log(chooseNumber)
+    else if (chooseNumber === true) {
+      chosenChars += number
+    }
+  }
+  //Random Math statement combining all to generate final product//
+  for (var i = 0; i < passwordlength; i++) {
+    finalcomboPassword += chosenChars.charAt(Math.random() * chosenChars.length);
+    //tracking method of showing random generator in progress//
+    console.log(finalcomboPassword)
+  }
+  return finalcomboPassword
+}
 }
