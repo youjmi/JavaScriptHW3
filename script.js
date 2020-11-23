@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 //Var Characters//
 var specialSymbols = "~!@#$%^&*()_+";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var upperCase = lowerCase.toUpperCase();
 var number = "123456789";
 //Gabe mentioned this at the last segment of class to find a way to combo all//
 var finalcomboPassword = ""
@@ -63,6 +63,10 @@ function writePassword() {
       if (chooseNumber === true) {
         chosenChars += number
       } else chooseNumber = false
+
+      if (chosenChars.length === 0){
+        alert("Please select atleast 1 option and start over")
+      }
     }
     //Random Math statement combining all to generate final product//
     for (var i = 0; i < passwordlength; i++) {
@@ -72,12 +76,9 @@ function writePassword() {
     }
     return finalcomboPassword
   }
-  emptyArr = []
-  console.log(emptyArr)
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); {
 
 }
-
 
