@@ -2,14 +2,13 @@
 console.log("Generator is Active")
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//Var Characters//
-var specialSymbols = "~!@#$%^&*()_+".split("");
+//Var Characters. I have split them and added an additional string to eliminate commas//
+var specialSymbols = "~!@#$%^&*()_+".split("").join("");
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = lowerCase.toUpperCase("")
-lowerCase.split("")
-upperCase.split("")
-var number = "123456789".split("");
-console.log(number)
+lowerCase.split("").join("")
+upperCase.split("").join("")
+var number = "123456789".split("").join("");
 //Gabe mentioned this like 3 classes ago... To be able to find a way to combine//
 var chosenChars = ""
 //Range of Password Length//
@@ -19,7 +18,7 @@ var chooseSymbols
 var chooselowerCase
 var chooseupperCase
 var chooseNumber
-
+// String to collecte the and store the random selection to guarantee choicees. 
 var finalOpts = ""
 
 
@@ -46,19 +45,15 @@ function writePassword() {
       console.log(chooseSymbols)
       if (chooseSymbols === true) {
         chosenChars += specialSymbols;
-        // var random= Math.floor(Math.random() * specialSymbols.length)
+        // Collecting random selections from Special Symsbols
         finalOpts += specialSymbols[(Math.floor(Math.random() * specialSymbols.length))]
-        // console.log(random)
-        //console.log(specialSymbols)
       }
-
-///******* math.floor & Remove , */
-
 
       chooselowerCase = confirm("Do you want Lower Case letters?")
       console.log(chooselowerCase)
       if (chooselowerCase === true) {
         chosenChars += lowerCase;
+        //Collecting random selectinos from lowercase 
         finalOpts += lowerCase[(Math.floor(Math.random() * lowerCase.length))]
       }
 
@@ -66,6 +61,7 @@ function writePassword() {
       console.log(chooseupperCase)
       if (chooseupperCase === true) {
         chosenChars += upperCase
+        //Collecting random selections from Uppercase
         finalOpts += upperCase[(Math.floor(Math.random() * upperCase.length))]
       }
 
@@ -73,28 +69,29 @@ function writePassword() {
       console.log(chooseNumber)
       if (chooseNumber === true) {
         chosenChars += number
+        //Collecting random selection from Number
         finalOpts += number[(Math.floor(Math.random() * number.length))]
-      
-      }
 
+      }
+      //Shows that random characters selected per chosen selection
       console.log(finalOpts)
 
       if (chosenChars.length === 0) {
         chosenChars = alert("No options selected. Please select ONE")
-      } else {
+      } else { 
         for (var i = 0; i < passwordlength; i++) {
-          passwordText += chosenChars.charAt(Math.floor(Math.random() * chosenChars.length));
-          //tracking method of showing random generator in progress//
+          passwordText += chosenChars.charAt(Math.floor(Math.random() * chosenChars.length))  ;
           console.log(passwordText)
         }
       }
+      //Combining the chosen Options+guaranteed random selections into PasswordText
       passwordText = finalOpts + passwordText
-      passwordText = passwordText.replace(/,/g,)
-      passwordText = passwordText.slice (0,passwordlength) //<-- look this up//
-      //Random Math statement combining all to generate final product//
+      //This is to make sure that the final outcome of the chosen options+guaranteed random selection is extracted to the correct length 
+      passwordText = passwordText.slice(0, passwordlength) //<-- look this up//
       return passwordText
     }
   }
+  //Empty Arrays to clear
   finalOpts = []
   chosenChars = []
   console.log(chosenChars)
