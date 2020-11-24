@@ -38,7 +38,7 @@ function writePassword() {
         passwordlength = prompt("Please make sure you put a NUMBER that is between 8 and 128")
       } console.log(passwordlength)
 
-      //begin combo choices.. Gathered the IF Sequences from YT and combined it with my confirm pop-up //
+      //begin combo choices with IF statements.
       passwordText = ""
 
       chooseSymbols = confirm("Do you want Symbols?")
@@ -87,7 +87,7 @@ function writePassword() {
       //Combining the chosen Options+guaranteed random selections into PasswordText
       passwordText = finalOpts + passwordText
       //This is to make sure that the final outcome of the chosen options+guaranteed random selection is extracted to the correct length 
-      passwordText = passwordText.slice(0, passwordlength) //<-- look this up//
+      passwordText = passwordText.slice(0, passwordlength) 
       return passwordText
     }
   }
