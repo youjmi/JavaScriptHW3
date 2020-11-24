@@ -9,6 +9,7 @@ var upperCase = lowerCase.toUpperCase("")
 lowerCase.split("")
 upperCase.split("")
 var number = "123456789".split("");
+console.log(number)
 //Gabe mentioned this like 3 classes ago... To be able to find a way to combine//
 var chosenChars = ""
 //Range of Password Length//
@@ -46,7 +47,7 @@ function writePassword() {
       if (chooseSymbols === true) {
         chosenChars += specialSymbols;
         // var random= Math.floor(Math.random() * specialSymbols.length)
-        finalOpts += specialSymbols[1]
+        finalOpts += specialSymbols[(Math.floor(Math.random() * specialSymbols.length))]
         // console.log(random)
         //console.log(specialSymbols)
       }
@@ -58,22 +59,22 @@ function writePassword() {
       console.log(chooselowerCase)
       if (chooselowerCase === true) {
         chosenChars += lowerCase;
-        finalOpts += lowerCase[1]
+        finalOpts += lowerCase[(Math.floor(Math.random() * lowerCase.length))]
       }
 
       chooseupperCase = confirm("Do you want Upper Case letters?")
       console.log(chooseupperCase)
       if (chooseupperCase === true) {
         chosenChars += upperCase
-        finalOpts += upperCase[1]
+        finalOpts += upperCase[(Math.floor(Math.random() * upperCase.length))]
       }
 
       chooseNumber = confirm("Do you want numbers?")
       console.log(chooseNumber)
       if (chooseNumber === true) {
         chosenChars += number
-        console.log(number)
-        finalOpts += number[1]
+        finalOpts += number[(Math.floor(Math.random() * number.length))]
+      
       }
 
       console.log(finalOpts)
@@ -88,6 +89,7 @@ function writePassword() {
         }
       }
       passwordText = finalOpts + passwordText
+      passwordText = passwordText.replace(/,/g,)
       passwordText = passwordText.slice (0,passwordlength) //<-- look this up//
       //Random Math statement combining all to generate final product//
       return passwordText
