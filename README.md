@@ -16,7 +16,17 @@ With all that cleared up, my JS is running the way that I think it should be.
 
 I would like to give special acknowledgment to Saveliy Samoylov the TA for his feedback and assistance. I would also like to give special acknoledgement to my team as well: Frankie, Amir, Johnnie, and Beatrice for their support, feedback, and brainstorming ideas. Here for their githubpages.
 
-Frankie: https://github.com/Franciscorosado09
-Amir: https://github.com/Alexfit4
-Johnnie:https://github.com/balokdecoy
-Beatrice:https://github.com/beatricellingson
+  1.  Frankie: https://github.com/Franciscorosado09
+  2.  Amir: https://github.com/Alexfit4
+  3.  Johnnie:https://github.com/balokdecoy
+  4.  Beatrice:https://github.com/beatricellingson
+
+Directions:
+When you click on Generate Password, you will be asked to choose the length of the PW between 8-128 Characters.
+Then you will be asked to choose your preferred selections (Symbols, Lowercase, Uppercase, Numbers). If in the event you do not choose any of these options, an alert will pop up stating so and you will need to start over. 
+When atleast 1 option is chosen, your new generated password will present itself.
+
+
+<img width="1440" alt="Screen Shot 2020-11-24 at 2 48 48 PM" src="https://user-images.githubusercontent.com/73494581/100144208-72a5ae00-2e64-11eb-8664-38099b129715.png">
+
+<img width="1440" alt="Screen Shot 2020-11-24 at 2 48 42 PM" src="https://user-images.githubusercontent.com/73494581/100144218-789b8f00-2e64-11eb-83f8-5ac1f62c1731.png">
