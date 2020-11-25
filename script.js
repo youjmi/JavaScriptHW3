@@ -23,7 +23,6 @@ var finalOpts = ""
 
 
 // Write password to the #password input//
-//DO NOT TOUCH. Separate from rest//
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -33,7 +32,6 @@ function writePassword() {
   function generatePassword() {
     //Beging Loops until the correct amount (a number between 8-128) is added. Additional prompts to confirm Character Preference//
     passwordlength = (prompt("How many characters would you like your Password to be? Must be betweem 8 to 128 characters and WHOLE NUMBERS only")); {
-      //Happened to find out the usage of 'while' by chance. I was stuck on this part for awhile because I wanted my prompts to continue even if a value wasn't correctly added. Instructor was reviewing a JS CheatSheet and as he scrolled through loops, I found 'while.'
       while (isNaN(passwordlength) || (passwordlength < 8) || (passwordlength > 128)) {
         passwordlength = prompt("Please make sure you put a NUMBER that is between 8 and 128")
       } console.log(passwordlength)
@@ -91,7 +89,7 @@ function writePassword() {
       return passwordText
     }
   }
-  //Empty Arrays to clear
+  //Empty Arrays
   finalOpts = []
   chosenChars = []
   console.log(chosenChars)
