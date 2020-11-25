@@ -1,4 +1,4 @@
-//Testing Active Status//
+
 console.log("Generator is Active")
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
